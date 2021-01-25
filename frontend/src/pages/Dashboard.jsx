@@ -5,6 +5,7 @@ import { format } from 'date-fns';
 import { GET_LAMPS, LAMP_SUB } from 'Utils/queries/lamps';
 import { GET_DOORS, GET_WINDOWS, DOORS_SUB, WINDOWS_SUB } from 'Utils/queries/doorsAndWindows';
 import { GET_BIRTHDAYS } from 'Utils/queries/birthdays';
+import Todo from 'Components/Todo/Todo';
 
 import { Box, BoxHeader, BoxContent, PageContainer } from 'Theme/Components';
 
@@ -155,6 +156,15 @@ const LampBox = () => {
 	);
 };
 
+const TodoBox = () => {
+	return (
+		<Box variant="warning" variants={boxVariants}>
+			<BoxHeader>Todos</BoxHeader>
+			<Todo></Todo>
+		</Box>
+	);
+};
+
 const TimeBox = styled.div`
 	font-size: xx-large;
 `;
@@ -189,6 +199,7 @@ const Dashboard = () => {
 				<LampBox />
 				<WindowsBox />
 				<DoorsBox />
+				<TodoBox />
 			</DashGrid>
 		</PageContainer>
 	);
